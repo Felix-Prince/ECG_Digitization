@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="header">
+        <span class="header-upload-label">ECG图片:</span>
+        <input class="file-name" type="file" id="file">
+        <span class="upload-button">
+            上传
+        </span>
+    </div>
+    <div class="main">
+        <div class="null"></div>
+        <div class="left">
+            <div class="null"></div>
+            <div class="null"></div>
+            <div><label for="name" class="label">病人名字</label><input class="name"></div>
+            <div><label for="id" class="label">病号</label><input class="id"></div>
+            <div><label for="sex" class="label">性别</label><input class="sex"></div>
+            <div class="null"></div>
+            <div class="null"></div>
+        </div>
+        <div class="right">
+            <div class="image-place">
+
+            </div>
+            <button>下一步</button>
+        </div>
+        <div class="null"></div>
+    </div>
+</body>
+<script>
+    document.querySelector("#file").addEventListener("change", function () {
+        var file = document.querySelector("#file").files[0];
+        var formdata = new FormData();
+        formdata.append("file", file);
+        var xhr = new XMLHttpRequest();
+        xhr.open("post", "http://127.0.0.1:8000/index/");
+        //回调
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                document.querySelector("#callback").innerText = xhr.responseText;
+            }
+        }
+        xhr.send(formdata);
+</script>
+
+</html>

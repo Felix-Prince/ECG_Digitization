@@ -1,0 +1,54 @@
+/* 图片上传完成后的裁剪框 */
+.imageBox {
+	width: 1000px;
+	height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#root {
+	display: flex;
+	justify-content: center;
+}
+
+/* 图片上传组件限制大小 */
+.avatar-uploader > .ant-upload {
+	width: 1000px !important;
+	height: 400px !important;
+	margin: 0px !important;
+}
+
+.imageHandleBox {
+	/* position: fixed;
+  top: 10vh; */
+	margin-top: 2vh;
+}
+
+#main {
+	width: 1000px;
+}
+
+.buttonList {
+	display: flex;
+	justify-content: space-between;
+}
+
+#echarts {
+	height: 300px;
+	width: 1000px;
+	/* position: fixed; */
+	/* top: 50vh; */
+}
+#echarts_g {
+	height: 300px;
+	width: 1000px;
+	/* position: fixed; */
+	/* top: 50vh; */
+}
+
+.fixButton {
+	position: fixed;
+	top: 30vh;
+	right: 2vw;
+}
